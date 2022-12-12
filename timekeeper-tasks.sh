@@ -4,7 +4,7 @@ TIMEKEEPER_DIR=$(dirname -- $0)
 TASKS_DIR="$TIMEKEEPER_DIR/tasks"
 
 source displaySeconds.sh
-if [ -z "$(ls $TASKS_DIR/*.secs)" ]; then
+if [ -z "$(ls $TASKS_DIR)" ]; then
     echo "No tasks to show."
     exit 0
 fi
