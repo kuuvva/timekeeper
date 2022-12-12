@@ -15,7 +15,7 @@ Running task can be stopped with `timekeeper-stop.sh` script by providing one or
 ## Example
 
 ```bash
-# Start measuring studying session with several tasks.
+# Start measuring studying session with tasks study and kotlin.
 
 ./timekeeper-start.sh study kotlin
 
