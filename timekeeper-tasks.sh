@@ -4,6 +4,10 @@ TIMEKEEPER_DIR=$(dirname -- $0)
 TASKS_DIR="$TIMEKEEPER_DIR/tasks"
 
 source displaySeconds.sh
+if [ -z "$(ls $TASKS_DIR/*.secs)" ]; then
+    echo "No tasks to show."
+    exit 0
+fi
 
 for task in $TASKS_DIR/*.secs ; do
     BASE_NAME=$(basename -- $task)
@@ -24,7 +28,7 @@ for task in $TASKS_DIR/*.secs ; do
     
     echo "  Total time `displaySeconds $TOTAL`."
     if [ -f $RUNNING ]; then
-        echo "  Running."
+        echo "  Running..."
     fi
 done
 

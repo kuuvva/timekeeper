@@ -17,11 +17,13 @@ do
     RUNNING_TASK="$TASKS_DIR/$task.running"
     
     if ! [ -f $TASK_SECS ]; then
-        echo "  ERROR: Total seconds for $task in file $TASK_SECS not found"
+        echo "  File $TASK_SECS not found"
+	continue
     fi
     
     if ! [ -f $RUNNING_TASK ]; then
         echo "  Task $task is not running."
+	continue
     fi
 
     TOTAL_SECS=`cat $TASK_SECS`
